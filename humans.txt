@@ -1,0 +1,14 @@
+# humanstxt.org
+
+/* TEAM */
+Developer: Eddie Cervello
+Contact: eddie@cervello.me
+GitHub: https://github.com/eddiecervello
+Location: United States
+
+/* SITE */
+Last update: 2025-01-17
+Standards: HTML5, CSS3, JavaScript ES6+
+Components: tsParticles
+Software: VS Code, Git
+Hosting: AWS S3 + CloudFront

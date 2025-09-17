@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Eddie Cervello</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;600&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0b0c10;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .error-container {
+            max-width: 600px;
+        }
+        
+        .error-code {
+            font-family: 'Reem Kufi', sans-serif;
+            font-size: clamp(4rem, 10vw, 8rem);
+            font-weight: 600;
+            background: linear-gradient(135deg, #6366f1 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+        
+        h1 {
+            font-family: 'Reem Kufi', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            color: #c5c5c5;
+            font-size: 1.125rem;
+            font-weight: 100;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .home-link {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid #6366f1;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .home-link:hover {
+            background: rgba(99, 102, 241, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+        
+        .decoration-line {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #6366f1, transparent);
+            margin: 2rem auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1>Page Not Found</h1>
+        <div class="decoration-line"></div>
+        <p>The page you're looking for doesn't exist or has been moved.</p>
+        <a href="/" class="home-link">Return Home</a>
+    </div>
+</body>
+</html>
