@@ -2,361 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Eddie Cervello - Software Engineer & AI Solutions Architect">
-    <meta name="author" content="Eddie Cervello">
-    <meta name="keywords" content="Software Engineer, AI Solutions Architect, Full Stack Developer, Machine Learning, Cloud Architecture">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <title>Eddie Cervello | AI Solutions Architect → Scalable Systems & MLOps</title>
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Inline ALL critical CSS to eliminate render-blocking -->
+    <style>
+        /* Critical CSS - Minified */
+        *{margin:0;padding:0;box-sizing:border-box}:root{--primary:#0b0c10;--text:#fff;--text-secondary:#c5c5c5;--accent:#6366f1;--gradient-1:#6366f1;--gradient-2:#0ea5e9;--font-primary:'Reem Kufi',sans-serif;--font-secondary:'Roboto',sans-serif}html{font-family:var(--font-secondary);font-size:clamp(14px,2vw,20px);-webkit-font-smoothing:antialiased}body{background:var(--primary);color:var(--text);overflow-x:hidden;min-height:100vh;line-height:1.6}.content-wrapper{display:flex;flex-direction:column;min-height:100vh;justify-content:center;align-items:center;padding:0 2rem;text-align:center;z-index:10}.hero-intro{font-family:var(--font-primary);font-size:clamp(3rem,5vw,3.75rem);font-weight:600;min-height:4.5rem;contain:layout style}.typewriter-container{display:inline-block;min-height:1.2em}.cursor{display:inline-block;width:2px;height:1.2em;background:var(--accent);margin-left:2px;animation:blink 1s infinite}@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}.gradient-decoration{width:min(40rem,90vw);height:2px;margin:0 auto;contain:layout}.gradient-line{position:absolute;top:0;background:linear-gradient(90deg,transparent,var(--gradient-color,var(--gradient-1)),transparent);opacity:0;will-change:opacity}.gradient-line--primary-blur{left:10%;width:80%;height:2px;filter:blur(2px)}.gradient-line--primary{left:10%;width:80%;height:1px}.gradient-line--secondary-blur{left:35%;width:30%;height:5px;--gradient-color:var(--gradient-2);filter:blur(2px)}.gradient-line--secondary{left:35%;width:30%;height:1px;--gradient-color:var(--gradient-2)}.below-line-content{display:flex;flex-direction:column;align-items:center;margin-top:1.5rem;min-height:100px;opacity:0}.hero-tagline{font-size:1.125rem;font-weight:100;color:var(--text-secondary);letter-spacing:.05em;margin-bottom:1.5rem}.social-links{display:flex;gap:1rem;justify-content:center}.social-links__item{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;color:var(--text-secondary);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:50%;text-decoration:none;transition:transform .3s cubic-bezier(.4,0,.2,1),background .3s}.social-links__item:hover{color:var(--text);background:rgba(99,102,241,.1);border-color:var(--accent);transform:translateY(-2px)}.particle-field{position:fixed;width:min(60rem,95vw);height:clamp(20rem,40vh,25rem);top:50%;left:50%;transform:translateX(-50%);z-index:1;opacity:0;pointer-events:none}
+        
+        /* Font loading states */
+        .fonts-loading body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+        .fonts-loaded .hero-intro{font-family:var(--font-primary)}
+        
+        /* Animations with GPU acceleration */
+        @keyframes fadeInUp{from{opacity:0;transform:translate3d(0,1.5rem,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+        @keyframes shimmer{0%,100%{opacity:.6}50%{opacity:1}}
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        .below-line-content{animation:fadeInUp 1s cubic-bezier(.4,0,.2,1) 5s both}
+        .gradient-line{animation:shimmer 3s cubic-bezier(.4,0,.6,1) infinite,fadeIn 1s cubic-bezier(.4,0,.2,1) 4.2s both}
+        .particle-field{animation:fadeIn 3s cubic-bezier(.4,0,.2,1) 5.5s both}
+        
+        /* Accessibility */
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+        
+        /* Mobile optimizations */
+        @media(max-width:768px){.hero-intro{font-size:2.5rem}.social-links__item{width:36px;height:36px}.social-links__item i{font-size:20px}}
+    </style>
+    
+    <!-- Web fonts loaded asynchronously -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet';document.documentElement.classList.add('fonts-loaded')">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@600&family=Roboto:wght@100&display=swap">
+    </noscript>
+    
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cervello.me/">
-    <meta property="og:title" content="Eddie Cervello | AI Solutions Architect → Scalable Systems & MLOps">
-    <meta property="og:description" content="Building scalable AI infrastructure and MLOps pipelines for enterprise systems">
+    <meta property="og:title" content="Eddie Cervello | AI Solutions Architect">
+    <meta property="og:description" content="Building scalable AI infrastructure and MLOps pipelines">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary">
-    <meta property="twitter:url" content="https://cervello.me/">
-    <meta property="twitter:title" content="Eddie Cervello | AI Solutions Architect → Scalable Systems & MLOps">
-
-    <title>Eddie Cervello | AI Solutions Architect → Scalable Systems & MLOps</title>
-
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;600&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
-    <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
-    <style>
-        /* CSS Reset and Base Styles */
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* CSS Variables for maintainability */
-        :root {
-            --color-primary: #0b0c10;
-            --color-text-primary: #ffffff;
-            --color-text-secondary: #c5c5c5;
-            --color-accent: #6366f1;
-            --color-gradient-primary: #6366f1;
-            --color-gradient-secondary: #0ea5e9;
-            --font-primary: 'Reem Kufi', sans-serif;
-            --font-secondary: 'Roboto', sans-serif;
-            --icon-size: 24px;
-            --transition-standard: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Base Typography - Responsive fluid scaling */
-        html {
-            font-family: var(--font-secondary);
-            font-size: clamp(14px, 2vw, 20px);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        body {
-            background: var(--color-primary);
-            color: var(--color-text-primary);
-            overflow-x: hidden;
-            position: relative;
-            min-height: 100vh;
-            line-height: 1.6;
-        }
-
-
-        /* Main Content Container */
-        .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            justify-content: center;
-            align-items: center;
-            padding: 0 2rem;
-            text-align: center;
-            position: relative;
-            z-index: 10;
-        }
-        
-        /* Content Layout */
-        .content-layout {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 1rem;
-        }
-
-        /* Hero Section */
-        .hero-intro {
-            font-family: var(--font-primary);
-            font-size: clamp(3rem, 5vw, 3.75rem);
-            font-weight: 600;
-            color: var(--color-text-primary);
-            margin-bottom: 0.25rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Typewriter Effect */
-        .typewriter-container {
-            display: inline-block;
-            position: relative;
-        }
-        
-        .typewriter-text {
-            display: inline;
-        }
-        
-        .cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1.2em;
-            background-color: var(--color-accent);
-            margin-left: 2px;
-            animation: blink 1s infinite;
-            vertical-align: text-bottom;
-        }
-        
-        .cursor.hidden {
-            display: none;
-        }
-        
-        @keyframes blink {
-            0%, 49% { opacity: 1; }
-            50%, 100% { opacity: 0; }
-        }
-        
-        /* Content Below Line */
-        .below-line-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 1.5rem;
-            opacity: 0;
-            animation: fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) 5s both;
-        }
-
-        .hero-tagline {
-            font-family: var(--font-secondary);
-            font-size: 1.125rem;
-            font-weight: 100;
-            color: var(--color-text-secondary);
-            letter-spacing: 0.05em;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Social Icons */
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .social-links__item {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            color: var(--color-text-secondary);
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 50%;
-            transition: var(--transition-standard);
-            text-decoration: none;
-        }
-
-        .social-links__item i {
-            font-size: var(--icon-size);
-        }
-
-        .social-links__item:hover,
-        .social-links__item:focus {
-            color: var(--color-text-primary);
-            background: rgba(99, 102, 241, 0.1);
-            border-color: var(--color-accent);
-            transform: translateY(-2px);
-        }
-
-        .social-links__item:focus {
-            outline: 2px solid var(--color-accent);
-            outline-offset: 2px;
-        }
-        
-
-
-        /* Gradient Decoration */
-        .gradient-decoration {
-            position: relative;
-            width: min(40rem, 90vw);
-            height: 2px;
-            z-index: 12;
-            margin: 0 auto;
-        }
-        
-        /* Gradient Lines - Decorative elements */
-        .gradient-line {
-            position: absolute;
-            top: 0;
-            background: linear-gradient(90deg, 
-                transparent, 
-                var(--gradient-color, var(--color-gradient-primary)), 
-                transparent);
-        }
-
-        .gradient-line--primary-blur {
-            left: 10%;
-            width: 80%;
-            height: 2px;
-            filter: blur(2px);
-        }
-
-        .gradient-line--primary {
-            left: 10%;
-            width: 80%;
-            height: 1px;
-        }
-
-        .gradient-line--secondary-blur {
-            left: 35%;
-            width: 30%;
-            height: 5px;
-            --gradient-color: var(--color-gradient-secondary);
-            filter: blur(2px);
-        }
-
-        .gradient-line--secondary {
-            left: 35%;
-            width: 30%;
-            height: 1px;
-            --gradient-color: var(--color-gradient-secondary);
-        }
-
-        /* Particles Effect Area */
-        .particle-field {
-            position: fixed;
-            width: min(60rem, 95vw);
-            height: clamp(20rem, 40vh, 25rem);
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%);
-            overflow: hidden;
-            z-index: 1;
-            opacity: 0;
-            animation: particleFadeIn 3s cubic-bezier(0.4, 0, 0.2, 1) 5.5s both;
-            mask-image: radial-gradient(
-                ellipse 600px 300px at center top,
-                black 0%,
-                rgba(0, 0, 0, 0.9) 40%,
-                rgba(0, 0, 0, 0.5) 60%,
-                rgba(0, 0, 0, 0.2) 80%,
-                transparent 100%
-            );
-            -webkit-mask-image: radial-gradient(
-                ellipse 600px 300px at center top,
-                black 0%,
-                rgba(0, 0, 0, 0.9) 40%,
-                rgba(0, 0, 0, 0.5) 60%,
-                rgba(0, 0, 0, 0.2) 80%,
-                transparent 100%
-            );
-        }
-        
-        #tsparticles {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-        
-        @keyframes particleFadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(1.5rem);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes shimmer {
-            0%, 100% { 
-                opacity: 0.6; 
-            }
-            50% { 
-                opacity: 1; 
-            }
-        }
-
-        .gradient-line {
-            opacity: 0;
-            animation: shimmer 3s cubic-bezier(0.4, 0, 0.6, 1) infinite,
-                      fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) 4.2s both;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .particle-field {
-                height: 18rem;
-            }
-            
-            .hero-intro {
-                font-size: 2.5rem;
-            }
-            
-            .social-links__item {
-                width: 36px;
-                height: 36px;
-            }
-            
-            .social-links__item i {
-                font-size: 20px;
-            }
-        }
-
-        /* Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
+    <meta property="twitter:title" content="Eddie Cervello | AI Solutions Architect">
+    
+    <script>
+        // Mark fonts as loading
+        document.documentElement.classList.add('fonts-loading');
+    </script>
 </head>
 <body>
-    <!-- Particle Effects Background -->
-    <div class="particle-field" aria-hidden="true">
-        <div id="tsparticles"></div>
-    </div>
-    
-    <!-- Main Content -->
     <main class="content-wrapper">
         <div class="content-layout">
-            <!-- Hero Intro - Above Line -->
             <h1 class="hero-intro">
                 <span class="typewriter-container">
                     <span class="typewriter-text"></span>
@@ -364,225 +71,70 @@
                 </span>
             </h1>
             
-            <!-- Gradient Decoration Line -->
-            <div class="gradient-decoration">
+            <div class="gradient-decoration" style="position:relative">
                 <span class="gradient-line gradient-line--primary-blur"></span>
                 <span class="gradient-line gradient-line--primary"></span>
                 <span class="gradient-line gradient-line--secondary-blur"></span>
                 <span class="gradient-line gradient-line--secondary"></span>
             </div>
             
-            <!-- Content Below Line -->
             <div class="below-line-content">
                 <p class="hero-tagline">AI Solutions Architect → Scalable Systems & MLOps</p>
                 <nav class="social-links" aria-label="Social media links">
-                    <a class="social-links__item" 
-                       href="https://github.com/eddiecervello" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       aria-label="GitHub Profile">
-                        <i class="fab fa-github" aria-hidden="true"></i>
+                    <a class="social-links__item" href="https://github.com/eddiecervello" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
                     </a>
-                    <a class="social-links__item" 
-                       href="https://twitter.com/eddiecervello" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       aria-label="Twitter Profile">
-                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    <a class="social-links__item" href="https://twitter.com/eddiecervello" target="_blank" rel="noopener" aria-label="Twitter">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
                     </a>
-                    <a class="social-links__item" 
-                       href="https://www.linkedin.com/in/eddiecervello" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       aria-label="LinkedIn Profile">
-                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                    <a class="social-links__item" href="https://www.linkedin.com/in/eddiecervello" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
                     </a>
-                    <a class="social-links__item" 
-                       href="https://medium.com/@eddie." 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       aria-label="Medium Profile">
-                        <i class="fab fa-medium" aria-hidden="true"></i>
+                    <a class="social-links__item" href="https://medium.com/@eddie." target="_blank" rel="noopener" aria-label="Medium">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                        </svg>
                     </a>
-                    <a class="social-links__item" 
-                       id="email-link"
-                       aria-label="Email Contact"
-                       role="button"
-                       tabindex="0"
-                       data-not-email="noreply@example.com">
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <a class="social-links__item" id="email-link" role="button" tabindex="0" aria-label="Email Contact">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
                         <span class="sr-only">Email Contact</span>
                     </a>
                 </nav>
             </div>
         </div>
     </main>
-
-    <!-- Email Shield Protection -->
-    <script src="src/email-shield.js"></script>
     
-    <!-- Particle System Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js" defer></script>
+    <div class="particle-field" aria-hidden="true">
+        <div id="tsparticles"></div>
+    </div>
     
     <script>
-        /**
-         * Particle System Configuration
-         * Optimized for performance and visual aesthetics
-         */
-        (function() {
-            'use strict';
-            
-            const particleConfig = {
-                background: {
-                    color: {
-                        value: "transparent"
-                    }
-                },
-                fullScreen: {
-                    enable: false,
-                    zIndex: 1
-                },
-                fpsLimit: 120,
-                interactivity: {
-                    events: {
-                        onClick: {
-                            enable: true,
-                            mode: "push"
-                        },
-                        onHover: {
-                            enable: false, // Disabled to match demo
-                            mode: "repulse"
-                        },
-                        resize: true
-                    },
-                    modes: {
-                        push: {
-                            quantity: 4
-                        },
-                        repulse: {
-                            distance: 200,
-                            duration: 0.4
-                        }
-                    }
-                },
-                particles: {
-                    color: {
-                        value: "#ffffff"
-                    },
-                    move: {
-                        angle: {
-                            offset: 0,
-                            value: 90
-                        },
-                        direction: "none",
-                        enable: true,
-                        outModes: {
-                            default: "out"
-                        },
-                        random: false,
-                        speed: {
-                            min: 0.1,
-                            max: 1
-                        },
-                        straight: false
-                    },
-                    number: {
-                        density: {
-                            enable: true,
-                            area: 600
-                        },
-                        value: 1500 // High particle count for dense sparkle effect
-                    },
-                    opacity: {
-                        value: {
-                            min: 0.1,
-                            max: 1
-                        },
-                        animation: {
-                            enable: true,
-                            speed: 3, // Slower twinkle for more visibility
-                            minimumValue: 0.05,
-                            sync: false,
-                            mode: "auto",
-                            startValue: "random",
-                            destroy: "none"
-                        }
-                    },
-                    shape: {
-                        type: "circle"
-                    },
-                    size: {
-                        value: {
-                            min: 0.3, // Tiny sparkles
-                            max: 1.5
-                        },
-                        animation: {
-                            enable: false
-                        }
-                    }
-                },
-                detectRetina: true
-            };
-            
-            // Typewriter animation
-            function typeWriter() {
-                const textElement = document.querySelector('.typewriter-text');
-                const cursor = document.querySelector('.cursor');
-                const fullText = "Hello, I'm Eddie!";
-                
-                let index = 0;
-                const typingSpeed = 100;
-                
-                function typeNextChar() {
-                    if (index < fullText.length) {
-                        textElement.textContent += fullText[index];
-                        index++;
-                        
-                        // Pause briefly after "Hello"
-                        if (index === 5) {
-                            setTimeout(() => {
-                                typeNextChar();
-                            }, 800);
-                        } else {
-                            setTimeout(typeNextChar, typingSpeed);
-                        }
-                    } else {
-                        // Hide cursor after typing completes
-                        setTimeout(() => {
-                            cursor.classList.add('hidden');
-                        }, 1000);
-                    }
-                }
-                
-                // Start typing after short delay
-                setTimeout(typeNextChar, 500);
-            }
-            
-            // Initialize everything when DOM is ready
-            window.addEventListener('DOMContentLoaded', async function() {
-                try {
-                    // Start typewriter animation
-                    typeWriter();
-                    
-                    // Delay particle initialization for dramatic effect
-                    setTimeout(async () => {
-                        await tsParticles.load("tsparticles", particleConfig);
-                    }, 5500);
-                } catch (error) {
-                    console.error('Failed to initialize particle system:', error);
-                }
-            });
-        })();
-    </script>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S27BMES51Q"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-S27BMES51Q');
+        // Inline critical JS - typewriter effect
+        !function(){const t=document.querySelector(".typewriter-text"),e=document.querySelector(".cursor"),r="Hello, I'm Eddie!";let n=0;function i(){n<r.length?(t.textContent+=r[n],n++,5===n?setTimeout(i,800):setTimeout(i,100)):setTimeout(()=>e.classList.add("hidden"),1e3)}setTimeout(i,500)}();
+        
+        // Optimized email protection
+        !function(){const e=document.getElementById("email-link");if(!e)return;let t=!1;e.addEventListener("click",r=>{if(r.preventDefault(),!t){t=!0;const r=String.fromCharCode(101,100,100,105,101,64,99,101,114,118,101,108,108,111,46,109,101);window.location.href=`mailto:${r}?subject=${encodeURIComponent("Hello from cervello.me")}`,e.href=`mailto:${r}`,setTimeout(()=>{e.removeAttribute("href"),t=!1},3e4)}})}();
+        
+        // Lazy load particles and other resources
+        let loaded=!1;function loadResources(){if(!loaded){loaded=!0;
+        // Load Font Awesome icons
+        const fa=document.createElement("link");fa.rel="stylesheet";fa.href="https://use.fontawesome.com/releases/v5.15.4/css/all.css";document.head.appendChild(fa);
+        // Load particles after delay
+        setTimeout(()=>{const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js";s.onload=()=>{tsParticles.load("tsparticles",{fullScreen:{enable:!1},fpsLimit:60,particles:{color:{value:"#fff"},move:{enable:!0,speed:{min:.1,max:1}},number:{density:{enable:!0,area:800},value:600},opacity:{value:{min:.1,max:1},animation:{enable:!0,speed:2}},size:{value:{min:.3,max:1.5}}},detectRetina:!0})};document.body.appendChild(s)},5500);
+        // Register service worker
+        if("serviceWorker"in navigator&&location.protocol==="https:"){navigator.serviceWorker.register("/sw.js").catch(()=>{})}
+        // Load GA4 after delay
+        setTimeout(()=>{const g=document.createElement("script");g.async=!0;g.src="https://www.googletagmanager.com/gtag/js?id=G-S27BMES51Q";document.head.appendChild(g);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-S27BMES51Q",{send_page_view:!0,anonymize_ip:!0})},3e3)}}
+        // Load on interaction or timeout
+        ["click","touchstart","scroll","keydown"].forEach(e=>window.addEventListener(e,loadResources,{once:!0,passive:!0}));setTimeout(loadResources,6e3);
     </script>
 </body>
 </html>

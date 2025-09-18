@@ -183,7 +183,7 @@
             There was an error sending your message. Please try again.
         </div>
 
-        <form class="contact-form" id="contact-form" action="/.netlify/functions/contact" method="POST">
+        <form class="contact-form" id="contact-form">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -216,7 +216,15 @@
     </div>
 
     <script>
-        document.getElementById('contact-form').addEventListener('submit', async (e) => {
+        // Email protection for contact form
+        const emailFragments = {
+            a: String.fromCharCode(101, 100, 100, 105, 101), // eddie
+            b: String.fromCharCode(64), // @
+            c: String.fromCharCode(99, 101, 114, 118, 101, 108, 108, 111), // cervello
+            d: String.fromCharCode(46, 109, 101) // .me
+        };
+        
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
             e.preventDefault();
             
             const form = e.target;
@@ -226,48 +234,56 @@
             
             // Check honeypot
             if (form.website.value) {
+                // Bot detected - show fake success
+                form.reset();
+                successMsg.classList.add('show');
+                setTimeout(() => {
+                    successMsg.classList.remove('show');
+                }, 5000);
                 return;
             }
-            
-            // Disable submit button
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
             
             // Hide previous messages
             successMsg.classList.remove('show');
             errorMsg.classList.remove('show');
             
-            try {
-                const formData = new FormData(form);
-                const data = Object.fromEntries(formData);
-                delete data.website; // Remove honeypot
-                
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-                
-                if (response.ok) {
-                    form.reset();
-                    successMsg.classList.add('show');
-                    setTimeout(() => {
-                        successMsg.classList.remove('show');
-                    }, 5000);
-                } else {
-                    throw new Error('Failed to send message');
-                }
-            } catch (error) {
-                errorMsg.classList.add('show');
+            // Get form values
+            const name = form.name.value;
+            const email = form.email.value;
+            const subject = form.subject.value;
+            const message = form.message.value;
+            
+            // Construct the recipient email
+            const recipient = emailFragments.a + emailFragments.b + 
+                            emailFragments.c + emailFragments.d;
+            
+            // Create email body
+            const body = `Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+
+---
+Sent from: cervello.me contact form`;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent('[Contact Form] ' + subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            setTimeout(() => {
+                form.reset();
+                successMsg.textContent = 'Opening your email client...';
+                successMsg.classList.add('show');
                 setTimeout(() => {
-                    errorMsg.classList.remove('show');
-                }, 5000);
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Send Message';
-            }
+                    successMsg.classList.remove('show');
+                    successMsg.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+                }, 3000);
+            }, 500);
         });
     </script>
 </body>
