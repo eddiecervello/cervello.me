@@ -17,19 +17,41 @@
     <!-- Inline ALL critical CSS to eliminate render-blocking -->
     <style>
         /* Critical CSS - Minified */
-        *{margin:0;padding:0;box-sizing:border-box}:root{--primary:#0b0c10;--text:#fff;--text-secondary:#c5c5c5;--accent:#6366f1;--gradient-1:#6366f1;--gradient-2:#0ea5e9;--font-primary:'Reem Kufi',sans-serif;--font-secondary:'Roboto',sans-serif}html{font-family:var(--font-secondary);font-size:clamp(14px,2vw,20px);-webkit-font-smoothing:antialiased}body{background:var(--primary);color:var(--text);overflow-x:hidden;min-height:100vh;line-height:1.6}.content-wrapper{display:flex;flex-direction:column;min-height:100vh;justify-content:center;align-items:center;padding:0 2rem;text-align:center;z-index:10}.hero-intro{font-family:var(--font-primary);font-size:clamp(3rem,5vw,3.75rem);font-weight:600;min-height:4.5rem;contain:layout style}.typewriter-container{display:inline-block;min-height:1.2em}.cursor{display:inline-block;width:2px;height:1.2em;background:var(--accent);margin-left:2px;animation:blink 1s infinite}@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}.gradient-decoration{width:min(40rem,90vw);height:2px;margin:0 auto;contain:layout}.gradient-line{position:absolute;top:0;background:linear-gradient(90deg,transparent,var(--gradient-color,var(--gradient-1)),transparent);opacity:0;will-change:opacity}.gradient-line--primary-blur{left:10%;width:80%;height:2px;filter:blur(2px)}.gradient-line--primary{left:10%;width:80%;height:1px}.gradient-line--secondary-blur{left:35%;width:30%;height:5px;--gradient-color:var(--gradient-2);filter:blur(2px)}.gradient-line--secondary{left:35%;width:30%;height:1px;--gradient-color:var(--gradient-2)}.below-line-content{display:flex;flex-direction:column;align-items:center;margin-top:1.5rem;min-height:100px;opacity:0}.hero-tagline{font-size:1.125rem;font-weight:100;color:var(--text-secondary);letter-spacing:.05em;margin-bottom:1.5rem}.social-links{display:flex;gap:1rem;justify-content:center}.social-links__item{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;color:var(--text-secondary);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:50%;text-decoration:none;transition:transform .3s cubic-bezier(.4,0,.2,1),background .3s}.social-links__item:hover{color:var(--text);background:rgba(99,102,241,.1);border-color:var(--accent);transform:translateY(-2px)}.particle-field{position:fixed;width:min(60rem,95vw);height:clamp(20rem,40vh,25rem);top:50%;left:50%;transform:translateX(-50%);z-index:1;opacity:0;pointer-events:none}
+        *{margin:0;padding:0;box-sizing:border-box}:root{--primary:#0b0c10;--text:#fff;--text-secondary:#c5c5c5;--accent:#6366f1;--gradient-1:#6366f1;--gradient-2:#0ea5e9;--font-primary:'Reem Kufi',sans-serif;--font-secondary:'Roboto',sans-serif}html{font-family:var(--font-secondary);font-size:clamp(14px,2vw,20px);-webkit-font-smoothing:antialiased}body{background:var(--primary);color:var(--text);overflow-x:hidden;min-height:100vh;line-height:1.6}.content-wrapper{display:flex;flex-direction:column;min-height:100vh;justify-content:center;align-items:center;padding:0 2rem;text-align:center;z-index:10}.hero-intro{font-family:var(--font-primary);font-size:clamp(3rem,5vw,3.75rem);font-weight:600;min-height:4.5rem;contain:layout style}.typewriter-container{display:inline-block;min-height:1.2em}.cursor{display:inline-block;width:2px;height:1.2em;background:var(--accent);margin-left:2px;animation:blink 1s infinite}@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}.gradient-decoration{width:min(40rem,90vw);height:2px;margin:0 auto;contain:layout;position:relative}.gradient-line{position:absolute;top:0;background:linear-gradient(90deg,transparent,var(--gradient-color,var(--gradient-1)),transparent);opacity:0;will-change:opacity}.gradient-line--primary-blur{left:10%;width:80%;height:2px;filter:blur(2px)}.gradient-line--primary{left:10%;width:80%;height:1px}.gradient-line--secondary-blur{left:35%;width:30%;height:5px;--gradient-color:var(--gradient-2);filter:blur(2px)}.gradient-line--secondary{left:35%;width:30%;height:1px;--gradient-color:var(--gradient-2)}.below-line-content{display:flex;flex-direction:column;align-items:center;margin-top:1.5rem;min-height:100px}.hero-tagline{font-size:1.125rem;font-weight:100;color:var(--text-secondary);letter-spacing:.05em;margin-bottom:1.5rem}.social-links{display:flex;gap:1rem;justify-content:center}.social-links__item{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;color:var(--text-secondary);background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:50%;text-decoration:none;transition:transform .3s cubic-bezier(.4,0,.2,1),background .3s}.social-links__item:hover{color:var(--text);background:rgba(99,102,241,.1);border-color:var(--accent);transform:translateY(-2px)}.particle-field{position:fixed;width:min(60rem,95vw);height:clamp(20rem,40vh,25rem);top:50%;left:50%;transform:translateX(-50%);overflow:hidden;z-index:1;opacity:0;pointer-events:none;mask-image:radial-gradient(ellipse 600px 300px at center top,black 0%,rgba(0,0,0,.9) 40%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.2) 80%,transparent 100%);-webkit-mask-image:radial-gradient(ellipse 600px 300px at center top,black 0%,rgba(0,0,0,.9) 40%,rgba(0,0,0,.5) 60%,rgba(0,0,0,.2) 80%,transparent 100%)}#tsparticles{width:100%;height:100%;position:relative}
         
         /* Font loading states */
         .fonts-loading body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
         .fonts-loaded .hero-intro{font-family:var(--font-primary)}
         
-        /* Animations with GPU acceleration */
+        /* Animations with GPU acceleration and new timing sequence */
         @keyframes fadeInUp{from{opacity:0;transform:translate3d(0,1.5rem,0)}to{opacity:1;transform:translate3d(0,0,0)}}
         @keyframes shimmer{0%,100%{opacity:.6}50%{opacity:1}}
         @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-        .below-line-content{animation:fadeInUp 1s cubic-bezier(.4,0,.2,1) 5s both}
-        .gradient-line{animation:shimmer 3s cubic-bezier(.4,0,.6,1) infinite,fadeIn 1s cubic-bezier(.4,0,.2,1) 4.2s both}
-        .particle-field{animation:fadeIn 3s cubic-bezier(.4,0,.2,1) 5.5s both}
+        @keyframes fadeInVerySlow{
+            0%{opacity:0}
+            50%{opacity:0.3}
+            100%{opacity:1}
+        }
+        @keyframes staggerIcon{from{opacity:0;transform:translate3d(0,10px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+        
+        /* Animation sequence after typewriter completes (at ~2.8s) */
+        /* 1. Gradient line appears first (3s) */
+        .gradient-line{animation:shimmer 3s cubic-bezier(.4,0,.6,1) infinite,fadeIn 1s cubic-bezier(.4,0,.2,1) 3s both}
+        
+        /* 2. Particles VERY slowly fade in (3.5s start, 4s duration for smooth effect) */
+        .particle-field{animation:fadeInVerySlow 4s ease-in-out 3.5s both}
+        
+        /* 3. AI Solutions text fades up (5.5s) */
+        .hero-tagline{opacity:0;animation:fadeInUp .8s cubic-bezier(.4,0,.2,1) 5.5s both}
+        
+        /* 4. Social icons appear one by one (6.3s onwards) */
+        .social-links{opacity:0;animation:fadeIn .5s cubic-bezier(.4,0,.2,1) 6.3s both}
+        .social-links__item{opacity:0;animation:staggerIcon .5s cubic-bezier(.4,0,.2,1) both}
+        .social-links__item:nth-child(1){animation-delay:6.3s}
+        .social-links__item:nth-child(2){animation-delay:6.5s}
+        .social-links__item:nth-child(3){animation-delay:6.7s}
+        .social-links__item:nth-child(4){animation-delay:6.9s}
+        .social-links__item:nth-child(5){animation-delay:7.1s}
         
         /* Accessibility */
         .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -116,25 +138,82 @@
         <div id="tsparticles"></div>
     </div>
     
+    <!-- Email Shield Protection -->
+    <script src="src/email-shield.js" defer></script>
+    
     <script>
         // Inline critical JS - typewriter effect
         !function(){const t=document.querySelector(".typewriter-text"),e=document.querySelector(".cursor"),r="Hello, I'm Eddie!";let n=0;function i(){n<r.length?(t.textContent+=r[n],n++,5===n?setTimeout(i,800):setTimeout(i,100)):setTimeout(()=>e.classList.add("hidden"),1e3)}setTimeout(i,500)}();
         
-        // Optimized email protection
-        !function(){const e=document.getElementById("email-link");if(!e)return;let t=!1;e.addEventListener("click",r=>{if(r.preventDefault(),!t){t=!0;const r=String.fromCharCode(101,100,100,105,101,64,99,101,114,118,101,108,108,111,46,109,101);window.location.href=`mailto:${r}?subject=${encodeURIComponent("Hello from cervello.me")}`,e.href=`mailto:${r}`,setTimeout(()=>{e.removeAttribute("href"),t=!1},3e4)}})}();
+        // Load particles EARLY at 2.5s (before text animations)
+        setTimeout(()=>{
+            const s=document.createElement("script");
+            s.src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js";
+            s.onload=()=>{
+                tsParticles.load("tsparticles",{
+                    background:{color:{value:"transparent"}},
+                    fullScreen:{enable:!1,zIndex:1},
+                    fpsLimit:120,
+                    interactivity:{
+                        events:{
+                            onClick:{enable:!0,mode:"push"},
+                            onHover:{enable:!1,mode:"repulse"},
+                            resize:!0
+                        },
+                        modes:{
+                            push:{quantity:4},
+                            repulse:{distance:200,duration:.4}
+                        }
+                    },
+                    particles:{
+                        color:{value:"#ffffff"},
+                        move:{
+                            angle:{offset:0,value:90},
+                            direction:"none",
+                            enable:!0,
+                            outModes:{default:"out"},
+                            random:!1,
+                            speed:{min:.1,max:1},
+                            straight:!1
+                        },
+                        number:{
+                            density:{enable:!0,area:600},
+                            value:1500
+                        },
+                        opacity:{
+                            value:{min:.1,max:1},
+                            animation:{
+                                enable:!0,
+                                speed:3,
+                                minimumValue:.05,
+                                sync:!1,
+                                mode:"auto",
+                                startValue:"random",
+                                destroy:"none"
+                            }
+                        },
+                        shape:{type:"circle"},
+                        size:{
+                            value:{min:.3,max:1.5},
+                            animation:{enable:!1}
+                        }
+                    },
+                    detectRetina:!0
+                });
+            };
+            document.body.appendChild(s);
+        },2500); // Load at 2.5s so they're ready to fade in at 3s
         
-        // Lazy load particles and other resources
+        // Lazy load other resources
         let loaded=!1;function loadResources(){if(!loaded){loaded=!0;
         // Load Font Awesome icons
         const fa=document.createElement("link");fa.rel="stylesheet";fa.href="https://use.fontawesome.com/releases/v5.15.4/css/all.css";document.head.appendChild(fa);
-        // Load particles after delay
-        setTimeout(()=>{const s=document.createElement("script");s.src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js";s.onload=()=>{tsParticles.load("tsparticles",{fullScreen:{enable:!1},fpsLimit:60,particles:{color:{value:"#fff"},move:{enable:!0,speed:{min:.1,max:1}},number:{density:{enable:!0,area:800},value:600},opacity:{value:{min:.1,max:1},animation:{enable:!0,speed:2}},size:{value:{min:.3,max:1.5}}},detectRetina:!0})};document.body.appendChild(s)},5500);
         // Register service worker
         if("serviceWorker"in navigator&&location.protocol==="https:"){navigator.serviceWorker.register("/sw.js").catch(()=>{})}
         // Load GA4 after delay
         setTimeout(()=>{const g=document.createElement("script");g.async=!0;g.src="https://www.googletagmanager.com/gtag/js?id=G-S27BMES51Q";document.head.appendChild(g);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-S27BMES51Q",{send_page_view:!0,anonymize_ip:!0})},3e3)}}
         // Load on interaction or timeout
-        ["click","touchstart","scroll","keydown"].forEach(e=>window.addEventListener(e,loadResources,{once:!0,passive:!0}));setTimeout(loadResources,6e3);
+        ["click","touchstart","scroll","keydown"].forEach(e=>window.addEventListener(e,loadResources,{once:!0,passive:!0}));setTimeout(loadResources,8e3);
     </script>
 </body>
 </html>
