@@ -405,15 +405,22 @@
                         <i class="fab fa-medium" aria-hidden="true"></i>
                     </a>
                     <a class="social-links__item" 
-                       href="mailto:eddie@cervello.me" 
-                       aria-label="Email Contact">
+                       id="email-link"
+                       aria-label="Email Contact"
+                       role="button"
+                       tabindex="0"
+                       data-not-email="noreply@example.com">
                         <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span class="sr-only">Email Contact</span>
                     </a>
                 </nav>
             </div>
         </div>
     </main>
 
+    <!-- Email Shield Protection -->
+    <script src="src/email-shield.js"></script>
+    
     <!-- Particle System Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js" defer></script>
     
